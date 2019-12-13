@@ -12,13 +12,17 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
             android:id="@+id/Log_In"
-            android:text="LogIn Interface"/>
+            android:text="登陆"/>
+
         <Button
+            android:id="@+id/Point_Out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Point_Out"
-            android:text="Pointing out Inteface"/>
+            android:layout_marginTop="100dp"
+            android:text="弹出" />
+        //a
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
