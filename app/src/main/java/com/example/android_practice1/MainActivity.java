@@ -17,7 +17,7 @@ import com.example.android_practice1.R;
 public class MainActivity extends AppCompatActivity {
 
 
-    @Override
+    @Override//a
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -27,7 +27,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder check = new AlertDialog.Builder(MainActivity.this);
                 LayoutInflater inflater = getLayoutInflater();
-
+                final View layoutView = inflater.inflate(R.layout.login_dialog,null);
+                check.setView(layoutView);
+                check.setTitle("LogIn");
+                check.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        EditText Username =  layoutView.findViewById(R.id.Username);
+                        EditText Password =  layoutView. findViewById(R.id.Password);
+                        if (Username.getText().toString().equals("abc") && Password.getText().toString().equals("123")) {
+                            Toast.makeText(MainActivity.this, "恭喜您，登录成功！", Toast.LENGTH_LONG).show();
+                            Log.i("tiao",Password.getText().toString());
+                        } else {
                             Toast.makeText(MainActivity.this, "对不起，输入错误！", Toast.LENGTH_LONG).show();
                         }
                     }
